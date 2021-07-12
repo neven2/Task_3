@@ -106,10 +106,14 @@ header .logo a {
 nav .nav-items {
   display: none;
 }
-nav i {
+nav .menu-icon {
   font-size: 1.5rem;
   color: black;
   cursor: pointer;
+}
+nav .nav-link i {
+  position: relative;
+  top: 3px;
 }
 /* home section */
 .home {
@@ -586,7 +590,7 @@ progress {
     border: 1px solid #2c3239;
     border-radius: 10px;
   }
-  nav i {
+  nav .menu-icon {
     display: none;
   }
 
