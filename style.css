@@ -4,6 +4,7 @@
   font-family: Calbira;
   src: url(./Fonts/Calibri.ttf);
 }
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 *,
 *::before,
 ::after {
@@ -19,7 +20,7 @@
   --header-height: 3rem;
   --body-font: Calbira;
   --body-text-color: #6f7388;
-  --title-font: "";
+  --title-font: "Roboto Slab", serif;
   --big-font-size: 2.5rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1rem;
@@ -27,7 +28,7 @@
 }
 @media screen and (min-width: 968px) {
   :root {
-    --big-font-size: 4rem;
+    --big-font-size: 4.5rem;
     --h2-font-size: 2.5rem;
     --h3-font-size: 1.5rem;
     --normal-font-size: 1.25rem;
@@ -55,6 +56,9 @@ button {
   font-size: var(--normal-font-size);
   font-family: var(--body-font);
 }
+button:hover {
+  opacity: 0.7;
+}
 input {
   outline: none;
   border: none;
@@ -75,6 +79,7 @@ footer {
   font-size: var(--h2-font-size);
   text-transform: capitalize;
   color: black;
+  font-family: var(--title-font);
   margin-bottom: 2rem;
 }
 .text-center {
@@ -125,6 +130,7 @@ nav i {
   flex-direction: column;
   row-gap: 0.8rem;
   top: 50%;
+  animation: drop 1.5s ease;
 }
 .home-subtitle {
   font-size: var(--h3-font-size);
@@ -133,9 +139,8 @@ nav i {
 }
 .home-title {
   font-size: var(--big-font-size);
-  text-transform: capitalize;
   font-family: var(--title-font);
-  color: black;
+  color: #171d4b;
 }
 .home-text {
   font-size: var(--normal-font-size);
@@ -148,9 +153,6 @@ nav i {
   border-radius: 10px;
   box-shadow: 0px 1px 5px var(--oragne-color);
 }
-.home-btn:hover {
-  opacity: 0.7;
-}
 .home-btn-play {
   background-color: var(--red-color);
   color: white;
@@ -162,6 +164,7 @@ nav i {
 }
 .home-btn-play:hover {
   opacity: 0.7;
+  cursor: pointer;
 }
 .home-btn-play i {
   vertical-align: middle;
@@ -234,8 +237,8 @@ nav i {
   height: 250px;
   border-radius: 20px 20px 0 0;
 }
-.destination-item:hover img {
-  transform: scale(1.2);
+.destination-item:hover {
+  transform: translateY(-20px);
 }
 .destination-info-details {
   display: flex;
@@ -277,7 +280,7 @@ nav i {
 }
 .trip-cart {
   position: relative;
-  margin: 40px;
+  margin: 20px;
   background-color: white;
   box-shadow: 1px 3px 15px -4px #cfcbcb;
   border-radius: 20px;
@@ -325,7 +328,7 @@ nav i {
   visibility: hidden;
 }
 .trip-cart:hover {
-  box-shadow: 2px 9px 30px -8px #a7d3e7;
+  box-shadow: 2px 9px 50px -4px #a7d3e7;
 }
 .trip-cart:hover .ongoing-card {
   visibility: visible;
@@ -352,7 +355,9 @@ progress {
 /* what people say */
 .circle {
   background-color: #d1d4df;
-  padding: 0 8px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   margin: 0 10px;
   cursor: pointer;
@@ -360,12 +365,11 @@ progress {
 .cart-footer .heart {
   color: #6a60e8;
 }
-.dark-color {
-  background-color: #6f7388;
-}
+.dark-color,
 .circle:hover {
-  background-color: #6f7388;
+  background-color: black;
 }
+
 .whatpeopleSay {
   position: relative;
 }
@@ -411,6 +415,7 @@ progress {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .client img {
   filter: grayscale(1);
 }
@@ -419,6 +424,9 @@ progress {
   box-shadow: 1px 3px 15px -4px #cfcbcb;
   border-radius: 20px;
   filter: grayscale(0);
+}
+.client:hover {
+  transform: scale(1.2);
 }
 /* Subscribe */
 .subscribe {
@@ -559,7 +567,8 @@ progress {
 }
 /* Meduin Devices */
 @media screen and (min-width: 768px) {
-  section {
+  section,
+  footer {
     padding: 7rem 0 2rem 0;
   }
   nav .nav-items {
@@ -572,15 +581,15 @@ progress {
     padding: 2px;
     text-transform: capitalize;
   }
-  .signup-border {
+  .signup-border,
+  nav li:hover .nav-link {
     border: 1px solid #2c3239;
+    border-radius: 10px;
   }
   nav i {
     display: none;
   }
-  nav li:hover .nav-link {
-    border: 1px solid #2c3239;
-  }
+
   .home {
     height: auto;
   }
@@ -642,14 +651,15 @@ progress {
   .section-info {
     width: 45%;
   }
+  /* 
+  .footer-contact-info {
+    flex: 2;
+  } */
   .logo-details {
     flex: 1;
   }
   .footer-info {
-    flex: 2;
-  }
-  .footer-contact-info {
-    flex: 2;
+    flex: 3;
   }
   .clients {
     grid-template-columns: repeat(5, 1fr);
@@ -679,6 +689,7 @@ progress {
   .scrool i {
     font-size: 1.5rem;
     padding: 10px;
+    cursor: pointer;
     display: block;
   }
   .scrool i:last-child {
@@ -726,7 +737,7 @@ progress {
     margin-bottom: 90px;
   }
   .home-info {
-    width: 50%;
+    width: 45%;
     margin-top: 0rem;
   }
   nav .nav-link {
@@ -740,5 +751,16 @@ progress {
   }
   .behind-person {
     top: 135px;
+  }
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
